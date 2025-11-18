@@ -1,9 +1,17 @@
-function App() {
+import { Redirect, Route } from 'wouter';
+import { Showcase } from './pages/Showcase';
+
+const App = () => {
+
   return (
     <>
-      <h1>
-        Initial commit 
-      </h1>
+      <Route path='/showcase'>
+          <Showcase />
+      </Route>
+
+      <Route>
+          <Redirect to='/showcase' />
+      </Route>
     </>
   )
 }
