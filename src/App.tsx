@@ -1,19 +1,17 @@
-import { Redirect, Route } from 'wouter';
+import { Redirect, Route, Switch } from 'wouter';
 import { Showcase } from './pages/Showcase';
+import { PetsOwners } from './pages/PetsOwners';
 
 const App = () => {
 
   return (
-    <>
-      <Route path='/showcase'>
-          <Showcase />
-      </Route>
+    <Switch>
+      <Route path="/showcase" component={Showcase} />
+      <Route path="/pets" component={PetsOwners} />
 
-      <Route>
-          <Redirect to='/showcase' />
-      </Route>
-    </>
+      <Redirect to="/showcase" />
+    </Switch>
   )
 }
 
-export default App
+export default App;
